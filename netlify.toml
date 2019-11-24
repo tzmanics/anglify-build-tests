@@ -1,3 +1,10 @@
 [build]
-  command = "ng build --prod"
   publish = "dist/anglify-build-tests"
+  [build.lifecycle]
+  init = [
+    "echo \"much wow\""
+  ]
+  build = "ng build --prod"
+[plugins]
+  [plugins.test]
+  type = "build-plugin-test"
